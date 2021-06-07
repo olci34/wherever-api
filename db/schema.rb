@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_06_02_164024) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "planets", force: :cascade do |t|
     t.string "position"
     t.string "description"
@@ -19,15 +22,15 @@ ActiveRecord::Schema.define(version: 2021_06_02_164024) do
   end
 
   create_table "planets_trips", force: :cascade do |t|
-    t.integer "trip_id"
-    t.integer "planet_id"
+    t.bigint "trip_id"
+    t.bigint "planet_id"
     t.index ["planet_id"], name: "index_planets_trips_on_planet_id"
     t.index ["trip_id"], name: "index_planets_trips_on_trip_id"
   end
 
   create_table "tickets", force: :cascade do |t|
     t.string "passcode"
-    t.integer "trip_id"
+    t.bigint "trip_id"
     t.index ["trip_id"], name: "index_tickets_on_trip_id"
   end
 
