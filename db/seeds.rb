@@ -91,4 +91,4 @@ pluto = Planet.create(name: "Pluto", position: "52,0,1.2", description: "Once th
 trip = user.trips.create(departure: "20 Oct 2022")
 trip.planets = [earth, mars]
 trip.save
-ticket = trip.create_ticket(passcode: "111")
+ticket = trip.create_ticket(passcode: "11111111")
