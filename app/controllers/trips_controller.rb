@@ -6,6 +6,7 @@ class TripsController < ApplicationController
     end
 
     def create
+        binding.pry
         trip = Trip.create(trip_params)
         render json: trip
     end
@@ -23,6 +24,6 @@ class TripsController < ApplicationController
     end
 
     def trip_params
-        params.require(:trip).permit(:departure, :user_id, planet_ids: [])
+        params.require(:trip).permit(:departure, :user_id, planet_ids: [], ticket_attributes: [:passcode])
     end
 end
