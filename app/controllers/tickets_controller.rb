@@ -1,6 +1,5 @@
 class TicketsController < ApplicationController
-
-    def create
-        binding.pry
-    end
+    def index
+        tickets = Ticket.all
+        render json: tickets
 end
