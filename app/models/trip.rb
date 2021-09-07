@@ -8,7 +8,6 @@ class Trip < ApplicationRecord
     private
 
     def destroyTripTicket
-        binding.pry
         self.ticket.destroy
     end
 
